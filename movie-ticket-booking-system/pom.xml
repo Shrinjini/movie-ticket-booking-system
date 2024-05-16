@@ -2,44 +2,54 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.5</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
 
 	<groupId>com.sapiens</groupId>
 	<artifactId>movie-ticket-booking-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>movie-ticket-booking-system</name>
 	<description>This is the main application for movie ticket booking service</description>
-	<packaging>pom</packaging>
-
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.5</version>
-		<relativePath />
-	</parent>
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>17</java.version>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+
 	</properties>
 
 	<dependencies>
 
-		<!-- Spring Boot dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
 		</dependency>
+
+
 	</dependencies>
 
-	<modules>
-		<module>movie-booking-service</module>
-		<module>movie-service</module>
-		<module>payment-service</module>
-	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+		<sourceDirectory>src/main/</sourceDirectory>
 
+	</build>
+
+	<!--<modules>
+		<module></module>
+	</modules>-->
 
 </project>
